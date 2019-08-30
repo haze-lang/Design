@@ -1,10 +1,14 @@
 # Design
 This repository contains documentation for the design of the language.
+
 ## Aim
-The goal is to combine features which have been either proposed in academics/research but are not 
-part of the mainstream languages, or used in niche languages such as Lisp and family, in an imperative
-paradigm to enable everyday developers to understand them and use them without needing to learn the 
-mathematics behind them.
+The goal is to combine features which have been either proposed in 
+
+- research but are not part of the mainstream languages, or 
+- used in niche *academic* languages such as Lisp and family, 
+
+in an imperative paradigm to enable everyday developers to understand them and use them without 
+needing to learn the excessive theory behind them.
 
 ## Research
 Collection of features and literature for the design.

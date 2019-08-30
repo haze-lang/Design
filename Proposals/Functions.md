@@ -26,4 +26,4 @@ Procedures with additional constraints.
 - Every Function always returns same result for a given set of arguments.
 
 ## Relevant Links
-[Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming](https://arxiv.org/abs/1908.05647)
+- [Counting Immutable Beans: Reference Counting Optimized for Purely Functional Programming](https://arxiv.org/abs/1908.05647)
