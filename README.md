@@ -2,13 +2,13 @@
 This repository contains documentation for the design of the language.
 
 ## Aim
-The goal is to combine features which have been either proposed in 
+The focus of this project is on features
 
-- research but are not part of the mainstream languages, or 
-- used in niche *academic* languages such as Lisp and family, 
+- proposed in research but are not part of the mainstream languages, or
+- used in niche *academic languages* (such as Lisp and family)
 
-in an imperative paradigm to enable everyday developers to understand them and use them without 
-needing to learn the excessive theory behind them.
+The goal is to combine these features in an imperative paradigm to enable everyday developers to 
+understand them and use them without needing to learn the excessive theory behind them.
 
 ## Research
 Collection of features and literature for the design.
@@ -36,5 +36,5 @@ Pure functional programming features from Lisp and family, notably Haskell.
 
 
 ## Initial Design
-I have selected some features to be part of the initial design. They can be found at 
+I have selected some features to be part of the initial design. See 
 [Initial Proposal](/Proposals/Initial.md).
