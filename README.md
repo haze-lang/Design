@@ -7,8 +7,9 @@ The focus of this project is on features
 - proposed in research but are not part of the mainstream languages, or
 - used in niche *academic languages* (such as Lisp and family)
 
-The goal is to combine these features in an imperative paradigm to enable everyday developers to 
-understand them and use them without needing to learn the excessive theory behind them.
+The goal is to combine these features with the latest advancements in programming languages in an 
+imperative paradigm to enable everyday developers to understand them and use them without needing 
+the theoretical background in Programming Language Theory.
 
 ## Research
 Collection of features and literature for the design.
@@ -29,7 +30,10 @@ Pure functional programming features from Lisp and family, notably Haskell.
 
 ### Memory Management
 
-- Choice of different memory management strategies such as GC, Reference Count, Smart Pointers, etc.
+Choice of different memory management strategies such as 
+- Reference Count
+- Smart Pointers
+- Garbage Collection
 
 ### Metaprogramming
 - Lisp's [Homoiconicity](https://en.wikipedia.org/wiki/Homoiconicity)
