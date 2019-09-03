@@ -17,11 +17,16 @@ Collection of features and literature for the design.
 ### Pure Functional Programming
 Pure functional programming features from Lisp and family, notably Haskell.
 
-- Continuations
 - Algebraic Effects
 - Pure Functions & Higher-order functions
 - Full Lazy Evaluation (Haskell)
+
+### Flow Control
+- Continuations (Scheme)
 - [Icon's Goal-directed Execution](https://en.wikipedia.org/wiki/Icon_(programming_language)#Goal-directed_execution)
+
+### Concurrency
+- Goroutines (Go)
 
 ### Type System
 - Robust Type System such as Dependent Types in [Idris](https://www.idris-lang.org/)
