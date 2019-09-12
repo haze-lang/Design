@@ -17,7 +17,7 @@ imperative environment.
 Procedures with additional constraints.
 
 ### Constraints
-- Must not use any imperative code constructs (Loops).
+- Must not use any imperative code constructs (e.g. Loops).
 - Must return a value.
 - Must not have any side effects (I/O, File handles, Sockets, etc).
 - Can only call other pure functions.
