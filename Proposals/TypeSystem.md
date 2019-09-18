@@ -8,6 +8,9 @@ eliminate maximum errors at compile-time.
 
 ## Design Details
 
+### Candidates
+- [Linear Types](https://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems)
+
 ## Complications
 
 ## Relevant Links
