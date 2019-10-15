@@ -1,5 +1,5 @@
 # Background
-Described here is some context and reasons why I decided to work on a programming language for my senior project. This document needs to updated since it was originally the outline of my proposal before my project was accepted.
+Described here is some context and reasons why I decided to work on a programming language for my senior project. This document needs to be updated since it was originally the outline of my proposal before the project was accepted.
 
 ## Motivation and Goal
 The focus of this project is on features

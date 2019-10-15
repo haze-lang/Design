@@ -1,11 +1,16 @@
-# Design
-This repository contains documentation for design of the language. The implementation will be available at [Compiler](https://github.com/syp-lang/Compiler).
+# Language Design
+This repository contains documentation for design of the language.
+
+*The layout of this repository was inspired by C#'s [official design repository](https://github.com/dotnet/csharplang/)*.
+
+## Implementation
+ The implementation *will be* available at [Compiler repository](https://github.com/syp-lang/Compiler).
 
 ## Specifications
-Find language specifications at [specifications folder](/Specs/README.md).
+Find language specifications in [specifications folder](/Specs/README.md).
 
 ## Proposals
-Collection of potential features proposed for the design. See [proposals folder](/Proposals/README.md).
+Collection of potential features proposed for the design can be found in [proposals folder](/Proposals/README.md).
 
 ## Initial Design
 See [Initial Proposal](/Proposals/Initial.md).
@@ -14,4 +19,4 @@ See [Initial Proposal](/Proposals/Initial.md).
 See [Research](/Research/README.md) for collection of features and literature for the design.
 
 ## Background
-Some information about me and why I selected research in programming languages as senior project in my bachelor's program. See [background](Background.md).
+[Here](Background.md), I have documented some information about me and why I selected research in programming languages as senior project in my bachelor's program.
