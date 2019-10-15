@@ -3,15 +3,15 @@
 ## Goal
 - Provide purely functional programming features for access to functional paradigm in an 
 imperative environment.
-- Enable declarative code.
 
 ## Benefits
 - Can be optimized to skip the call if return value is unused since there are no side effects.
 - Possible [Lazy evaluation](LazyEvaluation.md).
 - Can be cached for a set of arguments.
-- Can always run concurrenctly.
+- Guaranteed Reentrancy (Can always run concurrenctly).
 - Possible compile-time invocation.
-- Possible optimization of recursive calls.
+- Various compiler optimizations.
+- Referential Transparency
 
 ## Design Details
 Procedures with additional constraints.

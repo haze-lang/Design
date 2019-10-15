@@ -32,6 +32,7 @@ Collection of useful literature relevant to topics of design.
 - [From Imperative to Pure-Functional and Back Again: Monads vs. Scoped Continuations](http://blog.paralleluniverse.co/2015/08/07/scoped-continuations/)
 - [Implementations of delimited control in OCaml, Haskell, Scheme](http://okmij.org/ftp/continuations/implementations.html)
 - [The Mother of all Monads](http://blog.sigfpe.com/2008/12/mother-of-all-monads.html)
+- [A Better API for First-Class Continuations](http://3e8.org/pub/pdf-t1/feeley.pdf)
 
 ### Type System
 
@@ -58,6 +59,8 @@ Relevant to memory management.
 - [Have sum types ever been considered by the C# language designers? - r/csharp](https://www.reddit.com/r/csharp/comments/7b8mvn/have_sum_types_ever_been_considered_by_the_c/)
 
 ### Memory Management Techniques
+
+#### Escape Analysis
 
 #### Resources
 - [Relevant thread on r/Haskell](https://www.reddit.com/r/haskell/comments/d5d13i/is_it_possible_to_design_a_functional_language/)

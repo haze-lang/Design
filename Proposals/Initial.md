@@ -1,6 +1,10 @@
 # Initial Design Proposal
 
 ## Type System
+
+### Fundamental Types
+- Byte
+
 [Main Proposal](TypeSystem.md)
 
 ## Built-in Data Structures
