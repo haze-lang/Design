@@ -1,5 +1,5 @@
 # Language Specifications
 
 - [Introduction](Introduction.md)
-- [Grammar](Grammar.md)
+- [Syntax](Syntax.md)
 - [Type System](TypeSystem.md)
