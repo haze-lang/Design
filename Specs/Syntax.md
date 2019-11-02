@@ -1,30 +1,46 @@
 # Syntax
 
 ## Grammar
+
+### Programs
 ```
 Program ::= Function | Function Program
+```
 
-Function ::= FuncType LineBreak FuncName '(' ParamList ')' Whitespaces '=' Whitespaces ExprChain Terminator
+### Functions
+```
+Function ::= FuncType LINEBREAK FUNCNAME '(' ParamList ')' Whitespaces '=' Whitespaces ExprChain TERMINATOR
 
-FuncType ::= FuncName Whitespace ':' Whitespace Mappings
+FuncType ::= FUNCNAME WHITESPACE ':' WHITESPACE Mappings
 
 Mappings ::= Mapping | Mapping Mappings
-Mapping ::= TypeName Whitespace '->' Whitespace TypeName
+Mapping ::= TYPENAME WHITESPACE '->' WHITESPACE TYPENAME
 
-FuncName ::= Identifer
+ParamList ::= Param | Param ',' WHITESPACE ParamList
+Param ::= IDENTIFIER
+```
 
-ParamList ::= Param | Param ',' Whitespace ParamList
-Param ::= Identifer
-
+### Expressions
+```
 ExprChain ::= Expression
+ExprList ::= Expression | Expression ',' WHITESPACE ExprList
+Expression ::= FuncInvoke
+FuncInvoke ::= FUNCNAME '(' ExprList ')'
+```
 
-Expression ::= 
+### Misc.
+```
+Whitespaces ::= WHITESPACE | WHITESPACE Whitespaces
+```
 
-Identifer ::= 
-
-Terminator ::= ';'
-
-Whitespaces ::= Whitespace | Whitespace Whitespaces
-Whitespace ::= ' '
-LineBreaK ::= 
+### Lexical Grammar
+```
+FUNCNAME ::= IDENTIFIER
+TYPENAME ::= IDENTIFIER
+IDENTIFIER ::= ALPHA (ALPHA | DIGIT)*
+ALPHA ::= 'a' ... 'z' | 'A' ... 'Z' | '_' | '''
+DIGIT ::= '0' ... '9'
+WHITESPACE ::= ' ' | LINEBREAK
+TERMINATOR ::= ';'
+LINEBREAK ::= '\r\n' | '\r' | '\n'
 ```
