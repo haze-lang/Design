@@ -1,5 +1,12 @@
 # Initial Design Proposal
 
+## Concurrency
+
+- Structured Concrrency with fibers.
+- Default immutablity in functions.
+
+[Main Proposal](Fibers.md)
+
 ## Type System
 
 ### Fundamental Types
@@ -11,10 +18,10 @@
 
 ## Memory Management Strategies
 1. [Restrained](RestrainedMemoryManagement.md)
-1. Automatic Scope-based Deallocation (Smart Pointers, C++'s `unique_ptr`)
-1. Reference Count
-1. Deletion on Unreachable Decision (Dylan)
-1. Garbage Collection
+2. Reference Count
+3. Automatic Scope-based Deallocation (Smart Pointers, C++'s `unique_ptr`)
+4. Deletion on Unreachable Decision (Dylan)
+5. Garbage Collection
     - Tracing GC
 
 ## Language Specifics
@@ -47,11 +54,9 @@ C-like subroutine.
 A function is a purely functional piece of code.
 [Main Proposal](Functions.md)
 
-## Function Dispatch
+## Subroutine Dispatch
 
 - Single
-- Double
-- Multiple
 
 ## Object-Orientation
 
@@ -62,9 +67,6 @@ A function is a purely functional piece of code.
 - Composition
 - Implicit Composition/Delegation (Mixin Classes)
 - Polymorphism
-
-## Concurrency:
-- Mutable & Immutable Variables
 
 ## Standard Library:
 ### Types

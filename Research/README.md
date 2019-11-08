@@ -24,15 +24,25 @@ Collection of useful literature relevant to topics of design.
 
 ## Features
 
+### Concurrency
+
+
+#### Resources
+- [Project Loom - Structured Concurrency](https://wiki.openjdk.java.net/display/loom/Structured+Concurrency)
+- [Project Loom – lightweight concurrency for the JVM](https://trio.discourse.group/t/project-loom-lightweight-concurrency-for-the-jvm/97)
+- [Notes on structured concurrency, or: Go statement considered harmful](https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/)
+
 ### Continuations
 
 #### Resources
 
 - [History of Continuations](http://www.cs.ru.nl/~freek/courses/tt-2011/papers/cps/histcont.pdf)
+- [Continuations from Generalized Stack Inspection∗ by Matthias Felleisen et al.](https://www2.ccs.neu.edu/racket/pubs/icfp05-pcmkf.pdf)
 - [From Imperative to Pure-Functional and Back Again: Monads vs. Scoped Continuations](http://blog.paralleluniverse.co/2015/08/07/scoped-continuations/)
+- [A Better API for First-Class Continuations](http://3e8.org/pub/pdf-t1/feeley.pdf)
 - [Implementations of delimited control in OCaml, Haskell, Scheme](http://okmij.org/ftp/continuations/implementations.html)
 - [The Mother of all Monads](http://blog.sigfpe.com/2008/12/mother-of-all-monads.html)
-- [A Better API for First-Class Continuations](http://3e8.org/pub/pdf-t1/feeley.pdf)
+- [The Revised Reporton the Syntactic Theories of Sequential Control and State](https://www2.ccs.neu.edu/racket/pubs/tcs92-fh.pdf)
 
 ### Type System
 
@@ -57,6 +67,8 @@ Relevant to memory management.
 - [Ceylon's Union & Intersection Types](https://ceylon-lang.org/documentation/1.3/tour/types/)
 - [C# design repository issue about Union & Intersection Types](https://github.com/dotnet/csharplang/issues/399)
 - [Have sum types ever been considered by the C# language designers? - r/csharp](https://www.reddit.com/r/csharp/comments/7b8mvn/have_sum_types_ever_been_considered_by_the_c/)
+- [Encoding Sum Types](https://yairchu.github.io/posts/sum-type-encodings.html)
+
 
 ### Memory Management Techniques
 

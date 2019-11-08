@@ -23,9 +23,11 @@ Param ::= IDENTIFIER
 ### Expressions
 ```
 ExprChain ::= Expression
-ExprList ::= Expression | Expression ',' WHITESPACE ExprList
 Expression ::= FuncInvoke
-FuncInvoke ::= FUNCNAME '(' ExprList ')'
+FuncInvoke ::= FUNCNAME Expressions
+Expressions ::= Expression | Expression WHITESPACE Expressions
+
+ExprList ::= Expression | Expression ',' WHITESPACE ExprList
 ```
 
 ### Misc.
