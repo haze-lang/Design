@@ -1,40 +1,40 @@
 # Research
 
-Collection of useful literature relevant to topics of design.
+This page collects useful literature relevant to topics of design.
 
-## Languages
+# Languages
 
-### Haskell
+## Haskell
 - [Open Data Types, Open Functions - r/Haskell](https://www.reddit.com/r/haskell/comments/d3qdql/whatever_happened_to_open_data_types_and_open/)
 
-### Rust
+## Rust
 
-### Scala
+## Scala
 
-### Icon
+## Icon
 
-### Formality
+## Formality
 - [Docs](http://docs.formality-lang.org/)
 - [Relevant Reddit Thread](https://www.reddit.com/r/haskell/comments/d2gcyw/just_letting_you_know_that_formality_has_evolved/)
 
-### Ceylon
+## Ceylon
 - [Site](https://ceylon-lang.org/)
 
-### TypeScript
+## TypeScript
 
-## Features
+# Concurrency
 
-### Concurrency
-
-
-#### Resources
 - [Project Loom - Structured Concurrency](https://wiki.openjdk.java.net/display/loom/Structured+Concurrency)
 - [Project Loom – lightweight concurrency for the JVM](https://trio.discourse.group/t/project-loom-lightweight-concurrency-for-the-jvm/97)
 - [Notes on structured concurrency, or: Go statement considered harmful](https://vorpus.org/blog/notes-on-structured-concurrency-or-go-statement-considered-harmful/)
 
-### Continuations
+# Continuations
 
-#### Resources
+- [Answer-Type Modification without Tears: Prompt-Passing Style Translation for Typed Delimited-Control Operators by Ikuo Kobori et al.](https://arxiv.org/pdf/1606.06379.pdf)
+
+- [Continuations and Delimited Control (Collection of Papers)](http://okmij.org/ftp/continuations/)
+
+- [The Axis of Eval - Some nice paperz on delimited continuations and first-class macros](https://axisofeval.blogspot.com/2011/07/some-nice-paperz.html)
 
 - [History of Continuations](http://www.cs.ru.nl/~freek/courses/tt-2011/papers/cps/histcont.pdf)
 - [Continuations from Generalized Stack Inspection∗ by Matthias Felleisen et al.](https://www2.ccs.neu.edu/racket/pubs/icfp05-pcmkf.pdf)
@@ -44,24 +44,24 @@ Collection of useful literature relevant to topics of design.
 - [The Mother of all Monads](http://blog.sigfpe.com/2008/12/mother-of-all-monads.html)
 - [The Revised Reporton the Syntactic Theories of Sequential Control and State](https://www2.ccs.neu.edu/racket/pubs/tcs92-fh.pdf)
 
-### Type System
+# Type System
 
-#### Algebraic Data Types
+## Algebraic Data Types
 Pattern matching for algebraic data types.
 
 - Sum Types
 - Product Types
 - Union & Intersection Types
 
-#### Refinement Types
+## Refinement Types
 
-#### Parametric Polymorphism
+## Parametric Polymorphism
 Enable generic programming.
 
-#### Linear Types
+## Linear Types
 Relevant to memory management.
 
-#### Resources
+## Resources
 - [Linear Types Wiki](https://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems)
 - [TypeScript's Intersection Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html#intersection-types)
 - [Ceylon's Union & Intersection Types](https://ceylon-lang.org/documentation/1.3/tour/types/)
@@ -70,24 +70,24 @@ Relevant to memory management.
 - [Encoding Sum Types](https://yairchu.github.io/posts/sum-type-encodings.html)
 
 
-### Memory Management Techniques
+# Memory Management
 
-#### Escape Analysis
+## Escape Analysis
 
-#### Resources
+### Resources
 - [Relevant thread on r/Haskell](https://www.reddit.com/r/haskell/comments/d5d13i/is_it_possible_to_design_a_functional_language/)
 
-### Evaluation Strategies
+## Evaluation Strategies
 
 - Call by name
 - Call by need (Lazy Evaluation)
 - Optimistic Evaluation (Non-deterministic)
 
-#### Resources
+### Resources
 - [Wikipedia](https://en.wikipedia.org/wiki/Evaluation_strategy)
 
-### Scope
+## Scope
 
-#### Resources
+### Resources
 
 - [Lexical & Dynamic Scope ](https://prl.ccs.neu.edu/blog/2019/09/05/lexical-and-dynamic-scope/)
