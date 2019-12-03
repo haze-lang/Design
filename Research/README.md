@@ -58,6 +58,9 @@ Pattern matching for algebraic data types.
 ## Parametric Polymorphism
 Enable generic programming.
 
+## Row Polymorphism (Record Types)
+- [Row Polymorphism](https://www.cl.cam.ac.uk/teaching/1415/L28/rows.pdf)
+
 ## Linear Types
 Relevant to memory management.
 

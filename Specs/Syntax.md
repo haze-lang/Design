@@ -3,32 +3,43 @@
 ## Grammar
 
 ### Programs
+```c
+Program ::= Procedure (Procedure | Function)*
 ```
-Program ::= Function | Function Program
+
+### Procedures
+```c
+Procedure ::= ProcType NEWLINE PROCNAME 
 ```
 
 ### Functions
+```c
+Function ::= FuncType NEWLINE FUNCNAME PARAM+ '=' Expression TERMINATOR
+FuncType ::= FUNCNAME ':' Mapping
+Mapping ::= TypeSet '->' TypeSet
+TypeSet ::= TYPENAME (CROSS TypeSet)*
 ```
-Function ::= FuncType LINEBREAK FUNCNAME '(' ParamList ')' Whitespaces '=' Whitespaces ExprChain TERMINATOR
 
-FuncType ::= FUNCNAME WHITESPACE ':' WHITESPACE Mappings
+#### Sample
+`id : Int -> Int`  
+`id x = x`
 
-Mappings ::= Mapping | Mapping Mappings
-Mapping ::= TYPENAME WHITESPACE '->' WHITESPACE TYPENAME
-
-ParamList ::= Param | Param ',' WHITESPACE ParamList
-Param ::= IDENTIFIER
-```
+`add : Int x Int -> Int`  
 
 ### Expressions
-```
-ExprChain ::= Expression
-Expression ::= FuncInvoke | Literal
-FuncInvoke ::= FUNCNAME Expressions
-Expressions ::= Expression | Expression WHITESPACE Expressions
+```c
+Expression ::= FuncInvoke | '(' Expression ')' | SwitchExpr | IDENTIFIER | Literal
 
-ExprList ::= Expression | Expression ',' WHITESPACE ExprList
+FuncInvoke ::= FUNCNAME Expression+
+SwitchExpr ::= 'switch' '=>' (Pattern '->' Expression TERMINATOR)+
+Pattern ::= Literal //TODO
 ```
+
+#### Sample
+`switch n => `  
+`0 -> 1;`  
+`1 -> 1;`  
+`default -> n * factorial (n-1)`
 
 ### Literals
 ```
@@ -43,13 +54,16 @@ Whitespaces ::= WHITESPACE | WHITESPACE Whitespaces
 ### Lexical Grammar
 ```c
 FUNCNAME ::= IDENTIFIER
+PARAM ::= IDENTIFIER
 TYPENAME ::= IDENTIFIER
 IDENTIFIER ::= ALPHA (ALPHA | DIGIT)*
+CROSS ::= 'X'
 ALPHA ::= 'a' ... 'z' | 'A' ... 'Z' | '_' | '''
 DIGIT ::= '0' ... '9'
 NUMBER ::= DIGIT+ | (DIGIT+ '.' DIGIT+)
 STRING ::= '"' (ALPHA | DIGIT)* '"'
-WHITESPACE ::= ' ' | LINEBREAK
-TERMINATOR ::= ';'
-LINEBREAK ::= '\r\n' | '\r' | '\n'
+TERMINATOR ::= ';' | NEWLINE
+WHITESPACE ::= ' ' | NEWLINE
+SEPERATOR ::= TERMINATOR
+NEWLINE ::= '\r\n' | '\r' | '\n'
 ```

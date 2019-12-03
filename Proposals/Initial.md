@@ -20,25 +20,22 @@
 1. [Restrained](RestrainedMemoryManagement.md)
 2. Reference Count
 3. Automatic Scope-based Deallocation (Smart Pointers, C++'s `unique_ptr`)
-4. Deletion on Unreachable Decision (Dylan)
-5. Garbage Collection
-    - Tracing GC
 
 ## Language Specifics
 ### First Class Citizens
 - Variables
-- Subroutines
+- Procedures
+- Functions & Operators
 
 ### Copy Semantics
 - Copy on write
 
 ### Move Semantics
+TODO
 
 ### Expressions
 
-### Operators
-
-### Short-Circuit Operators
+- Function Invocations
 
 ## Evaluation
 1. Eager
