@@ -46,6 +46,8 @@ This page collects useful literature relevant to topics of design.
 
 # Type System
 
+## Complete Type Erasure
+
 ## Algebraic Data Types
 Pattern matching for algebraic data types.
 
@@ -88,6 +90,7 @@ Relevant to memory management.
 
 ### Resources
 - [Wikipedia](https://en.wikipedia.org/wiki/Evaluation_strategy)
+- [What about Natural Numbers? [Talk, Laziness]](https://pwlconf.org/2019/jose-trilla/)
 
 ## Scope
 

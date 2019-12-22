@@ -6,7 +6,6 @@
 - Unified scoping rules for opening/closing mechanisms.
 
 ## Benefits
-List all benefits of the feature.
 - Abstraction over concurrent constructs such as OS threads.
 - Structured control flow.
 - Elimination of unstructured control flow.
