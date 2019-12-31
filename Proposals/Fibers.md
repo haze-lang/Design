@@ -11,10 +11,10 @@
 - Elimination of unstructured control flow.
 
 ## Design Details
-TODO
+- Dependency on [Delimited Continuations](Continuations.md).
 
 ## Complications
-If applicable, describe potential conflicts with existing design or any other complication.
+- Handling of CPU Bound Tasks
 
 ## Relevant Links
 - [Research: Concurrency](/Research/README.md#Concurrency)

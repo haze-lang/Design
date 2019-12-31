@@ -9,33 +9,38 @@
 
 ## Type System
 
-### Fundamental Types
+### Unit
+Type with only one value, `()`. It represents a useless value, similar to `void` in C.
+
+### Built-in Types
 - Byte
+- Character
+- Number
+- String
+
+#### Built-in Data Structures
+- See Standard Library section.
 
 [Main Proposal](TypeSystem.md)
 
-## Built-in Data Structures
-
 ## Memory Management Strategies
 1. [Restrained](RestrainedMemoryManagement.md)
-2. Reference Count
-3. Automatic Scope-based Deallocation (Smart Pointers, C++'s `unique_ptr`)
+<!-- 2. Reference Count -->
+<!-- 3. Automatic Scope-based Deallocation (Smart Pointers, C++'s `unique_ptr`) -->
 
 ## Language Specifics
 ### First Class Citizens
 - Variables
 - Procedures
-- Functions & Operators
-
-### Copy Semantics
-- Copy on write
-
-### Move Semantics
-TODO
+- Functions
 
 ### Expressions
-
-- Function Invocations
+- Procedure Invocations
+- Pure Expressions
+  - Function 
+  - Switch Expressions (Pattern Matchhing)
+  - Lambda Expressions
+  - Literals (Number & String)
 
 ## Evaluation
 1. Eager
@@ -45,28 +50,13 @@ TODO
 There are two types of subroutines.
 
 ### Procedures
-C-like subroutine.
+List of statements.
 
 ### Functions
-A function is a purely functional piece of code.
+Single or composition of pure expressions.
 [Main Proposal](Functions.md)
-
-## Subroutine Dispatch
-
-- Single
-
-## Object-Orientation
-
-### Prototypes
-
-### Classes
-#### Inheritance Breakdown
-- Composition
-- Implicit Composition/Delegation (Mixin Classes)
-- Polymorphism
 
 ## Standard Library:
 ### Types
 - Array
-- Table
-- Dynamic Array
+- List

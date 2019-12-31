@@ -3,15 +3,16 @@
 ## Grammar
 
 ### Programs
-```c
+```
 Program ::= Procedure (Procedure | Function)*
 ```
 
 ### Procedures
-```c
-Procedure ::= ProcType NEWLINE PROCNAME Body
-Body ::= LBRACE (Statement TERMINATOR)+ RBRACE
-Statement ::= Declaration | Assignment | Expression | ConditionalStatement
+```
+Procedure ::= ProcType NEWLINE PROCNAME Block
+ProcType ::= PROCNAME COLON Mapping
+Block ::= LBRACE (Statement TERMINATOR)+ RBRACE
+Statement ::= Assignment | Expression | ConditionalStatement
 ```
 #### Sample Procedure
 ```c
@@ -24,7 +25,7 @@ PrintLine str
 ```
 
 ### Functions
-```c
+```
 Function ::= FuncType NEWLINE FUNCNAME PARAM+ EQUALS PureExpression TERMINATOR
 FuncType ::= FUNCNAME COLON Mapping
 Mapping ::= TypeSet ARROW TypeSet
@@ -47,13 +48,14 @@ RecordType ::= RECORD TYPENAME (MEMBERNAME TYPENAME)+
 
 ### Expressions
 ```
-Expression ::= ProcInvoke | PureExpression
-ProcInvoke ::= ..
-PureExpression ::= FuncInvoke | LPAREN PureExpression RPAREN | SwitchExpr | IDENTIFIER | Conditional | Literal
+Expression ::= ProcInvoke | PureExpression | LPAREN Expression RPAREN
+ProcInvoke ::= PROCNAME Expression+
+
+PureExpression ::= FuncInvoke | SwitchExpr | IDENTIFIER | Conditional | Literal | UNIT
 Conditional ::= IF PureExpression THEN PureExpression ELSE PureExpression
 FuncInvoke ::= FUNCNAME PureExpression+
 SwitchExpr ::= SWITCH PARAM DARROW (Pattern ARROW PureExpression TERMINATOR)+
-LambdaExpr ::= (BSLASH | PARAM+) DARROW (BODY | PureExpression)
+LambdaExpr ::= (BSLASH | PARAM+) DARROW (Block | PureExpression)
 Pattern ::= Literal // TODO
 ```
 
@@ -89,6 +91,7 @@ THEN ::= 'then'
 ELSE ::= 'else'
 SWITCH ::= 'switch'
 CROSS ::= 'X'
+UNIT ::= '()'
 EQUALS ::= '='
 COLON ::= ':'
 ARROW ::= '->'
@@ -108,6 +111,6 @@ DIGIT ::= '0' ... '9'
 NUMBER ::= DIGIT+ | ('-' DIGIT+)
 STRING ::= '"' (ALPHA | DIGIT)* '"'
 TERMINATOR ::= ';' | NEWLINE
-WHITESPACE ::= ' ' | NEWLINE
+WHITESPACE ::= ' ' | 't' | NEWLINE
 NEWLINE ::= '\r\n' | '\r' | '\n'
 ```

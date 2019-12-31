@@ -1,13 +1,13 @@
 # Continuations
 
 ## Goal
-Provide Continuations as a language level construct.
+Support for delimited control operators similar to reset/shift in Racket.
 
 ## Benefits
-TODO
+- Demonstration of advanced control flow mechanisms.
 
 ## Design Details
-TODO
+- Support for marking named prompts.
 
 ## Complications
 TODO
