@@ -9,7 +9,7 @@ Program ::= Procedure (Procedure | Function)*
 
 ### Procedures
 ```
-Procedure ::= ProcType NEWLINE PROCNAME Block
+Procedure ::= ProcType NEWLINE PROCNAME PARAM+ NEWLINE Block
 ProcType ::= PROCNAME COLON Mapping
 Block ::= LBRACE (Statement TERMINATOR)+ RBRACE
 Statement ::= Assignment | Expression | ConditionalStatement
@@ -48,10 +48,17 @@ RecordType ::= RECORD TYPENAME (MEMBERNAME TYPENAME)+
 
 ### Expressions
 ```
-Expression ::= ProcInvoke | PureExpression | LPAREN Expression RPAREN
+Expression ::= ProcInvoke 
+            | PureExpression 
+            | LPAREN Expression RPAREN
 ProcInvoke ::= PROCNAME Expression+
 
-PureExpression ::= FuncInvoke | SwitchExpr | IDENTIFIER | Conditional | Literal | UNIT
+PureExpression ::= FuncInvoke 
+            | SwitchExpr 
+            | IDENTIFIER 
+            | Conditional 
+            | Literal 
+            | UNIT
 Conditional ::= IF PureExpression THEN PureExpression ELSE PureExpression
 FuncInvoke ::= FUNCNAME PureExpression+
 SwitchExpr ::= SWITCH PARAM DARROW (Pattern ARROW PureExpression TERMINATOR)+
