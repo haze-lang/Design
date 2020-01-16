@@ -9,14 +9,22 @@ Program ::= Procedure (Procedure | Function)*
 
 ### Procedures
 ```
-Procedure ::= ProcType NEWLINE PROCNAME PARAM+ NEWLINE Block
+Procedure ::= ProcType NEWLINE PROCNAME PARAM* NEWLINE Block
 ProcType ::= PROCNAME COLON Mapping
 Block ::= LBRACE (Statement TERMINATOR)+ RBRACE
-Statement ::= Assignment | Expression | ConditionalStatement
+Statement ::= Assignment
+            | Expression
+Assignment ::= IDENTIFIER EQUALS Expression
 ```
-#### Sample Procedure
+#### Sample Procedures
 ```c
-PrintLine : String
+ScanLine : U -> U
+ScanLine
+{
+    ...
+}
+
+PrintLine : String -> U
 PrintLine str
 {
     Print str
@@ -26,14 +34,23 @@ PrintLine str
 
 ### Functions
 ```
-Function ::= FuncType NEWLINE FUNCNAME PARAM+ EQUALS PureExpression TERMINATOR
+Function ::= FuncType NEWLINE FUNCNAME PARAM* EQUALS PureExpression TERMINATOR
 FuncType ::= FUNCNAME COLON Mapping
-Mapping ::= TypeSet ARROW TypeSet
-TypeSet ::= TYPENAME (CROSS TypeSet)*
+
+Mapping ::= TypeSet (ARROW TypeSet)*
+TypeSet ::= TypeUnit (CROSS TypeUnit)*
+TypeUnit ::= TYPENAME
+        | LPAREN Mapping RPAREN
 ```
 
 #### Sample Function
 ```
+x : U -> Nat
+x = 2
+
+f : Int X (Int -> Int) -> Int
+f : a b = b a
+
 id : Int -> Int
 id x = x
 
@@ -42,28 +59,48 @@ add : Int x Int -> Int
 
 ### Types
 ```c
-Type ::= TYPE TYPENAME EQUALS TYPENAME | RecordType
-RecordType ::= RECORD TYPENAME (MEMBERNAME TYPENAME)+
+Type ::= TYPE TYPENAME EQUALS TypeDef | RecordType
+Record ::= RECORD TYPENAME EQUALS (MEMBERNAME COLON TYPENAME)+
+Product ::= TYPE TYPENAME EQUALS
+TypeDef ::= // TOOD
+```
+
+#### Sample Types
+```
+type Point = Int X Int X Int
+
+record Point = 
+X : Int
+Y : Int
+Z : Int
 ```
 
 ### Expressions
 ```
 Expression ::= ProcInvoke 
             | PureExpression 
-            | LPAREN Expression RPAREN
+            | GroupedExpression
+
 ProcInvoke ::= PROCNAME Expression+
 
-PureExpression ::= FuncInvoke 
-            | SwitchExpr 
-            | IDENTIFIER 
-            | Conditional 
-            | Literal 
-            | UNIT
-Conditional ::= IF PureExpression THEN PureExpression ELSE PureExpression
-FuncInvoke ::= FUNCNAME PureExpression+
-SwitchExpr ::= SWITCH PARAM DARROW (Pattern ARROW PureExpression TERMINATOR)+
+GroupedExpression ::= LPAREN Expression RPAREN
+
+PureExpression ::= FuncApplication 
+            | SwitchExpr
+            | ConditionalExpression
+            | LambdaExpr
+            | IDENTIFIER
+            | LITERAL 
+
+ConditionalExpression ::= IF PureExpression THEN PureExpression ELSE PureExpression
+
+FuncApplication ::= FUNCNAME PureExpression+
+
+SwitchExpr ::= SWITCH PureExpression NEWLINE (Pattern ARROW PureExpression TERMINATOR)+ DEFAULT ARROW PureExpression
+
 LambdaExpr ::= (BSLASH | PARAM+) DARROW (Block | PureExpression)
-Pattern ::= Literal // TODO
+
+Pattern ::= LITERAL // TODO
 ```
 
 #### Samples
@@ -74,19 +111,9 @@ x => { Print (add x 1) }
 ```
 ##### Switch
 ```
-switch n => 
+switch n
     0 -> 1;
     default -> n * factorial (n-1)
-```
-
-### Literals
-```
-Literal ::= NUMBER | STRING
-```
-
-### Misc.
-```
-
 ```
 
 ### Lexical Grammar
@@ -97,6 +124,7 @@ IF ::= 'if'
 THEN ::= 'then'
 ELSE ::= 'else'
 SWITCH ::= 'switch'
+DEFAULT ::= 'default'
 CROSS ::= 'X'
 UNIT ::= '()'
 EQUALS ::= '='
@@ -108,6 +136,7 @@ LPAREN ::= '('
 RPAREN ::= ')'
 LBRACE ::= '{'
 RBRACE ::= '}'
+PROCNAME ::= IDENTIFIER
 FUNCNAME ::= IDENTIFIER
 PARAM ::= IDENTIFIER
 TYPENAME ::= IDENTIFIER
@@ -115,8 +144,9 @@ MEMBERNAME ::= IDENTIFIER
 IDENTIFIER ::= ALPHA (ALPHA | DIGIT)*
 ALPHA ::= 'a' ... 'z' | 'A' ... 'Z' | '_' | '''
 DIGIT ::= '0' ... '9'
-NUMBER ::= DIGIT+ | ('-' DIGIT+)
+LITERAL ::= NUMBER | STRING | UNIT
 STRING ::= '"' (ALPHA | DIGIT)* '"'
+NUMBER ::= DIGIT+ | ('-' DIGIT+)
 TERMINATOR ::= ';' | NEWLINE
 WHITESPACE ::= ' ' | 't' | NEWLINE
 NEWLINE ::= '\r\n' | '\r' | '\n'

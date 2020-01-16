@@ -54,6 +54,7 @@ Pattern matching for algebraic data types.
 - Sum Types
 - Product Types
 - Union & Intersection Types
+- [The Two Dualities of Computation: Negative and Fractional Types (2012)](https://legacy.cs.indiana.edu/~sabry/papers/rational.pdf)
 
 ## Refinement Types
 
