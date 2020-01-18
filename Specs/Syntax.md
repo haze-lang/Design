@@ -34,7 +34,7 @@ PrintLine str
 
 ### Functions
 ```
-Function ::= FuncType NEWLINE FUNCNAME PARAM* EQUALS PureExpression TERMINATOR
+Function ::= FuncType NEWLINE FUNCNAME PARAM* EQUALS (Application | PureExpression) TERMINATOR
 FuncType ::= FUNCNAME COLON Mapping
 
 Mapping ::= TypeSet (ARROW TypeSet)*
@@ -77,16 +77,15 @@ Z : Int
 
 ### Expressions
 ```
-Expression ::= ProcInvoke 
-            | PureExpression 
+Expression ::= Application
+            | PureExpression
             | GroupedExpression
 
-ProcInvoke ::= PROCNAME Expression+
+Application ::= (PureExpression | GroupedExpression) Expression+
 
 GroupedExpression ::= LPAREN Expression RPAREN
 
-PureExpression ::= FuncApplication 
-            | SwitchExpr
+PureExpression ::= SwitchExpr
             | ConditionalExpression
             | LambdaExpr
             | IDENTIFIER
@@ -94,11 +93,9 @@ PureExpression ::= FuncApplication
 
 ConditionalExpression ::= IF PureExpression THEN PureExpression ELSE PureExpression
 
-FuncApplication ::= FUNCNAME PureExpression+
-
 SwitchExpr ::= SWITCH PureExpression NEWLINE (Pattern ARROW PureExpression TERMINATOR)+ DEFAULT ARROW PureExpression
 
-LambdaExpr ::= (BSLASH | PARAM+) DARROW (Block | PureExpression)
+LambdaExpr ::= PARAM+ DARROW (Block | PureExpression)
 
 Pattern ::= LITERAL // TODO
 ```
@@ -110,6 +107,7 @@ Pattern ::= LITERAL // TODO
 x => { Print (add x 1) }
 ```
 ##### Switch
+
 ```
 switch n
     0 -> 1;

@@ -1,13 +1,13 @@
-# Language Design
-This repository contains documentation for design of the language.
+# Haze Language Design
+This repository contains documentation for Haze language design.
 
 *The layout of this repository was inspired by C#'s [official design repository](https://github.com/dotnet/csharplang/)*.
 
 ## Implementation
-The language is implemented by the [Embers](https://github.com/syp-lang/Embers) project.
+Haze is implemented by the [Embers](https://github.com/syp-lang/Embers) project.
 
 ## Specifications
-Find language specifications in [specifications folder](/Specs/README.md).
+Find Haze design specifications in [specifications folder](/Specs/README.md).
 
 ## Proposals
 Collection of potential features proposed for the design can be found in [proposals folder](/Proposals/README.md).
