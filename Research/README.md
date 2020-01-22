@@ -64,6 +64,9 @@ Enable generic programming.
 ## Row Polymorphism (Record Types)
 - [Row Polymorphism](https://www.cl.cam.ac.uk/teaching/1415/L28/rows.pdf)
 
+## Higher-kinded Polymorphism
+- [Lightweight higher-kinded polymorphism [Defunctionalization of Types]](https://www.cl.cam.ac.uk/~jdy22/papers/lightweight-higher-kinded-polymorphism.pdf)
+
 ## Linear Types
 Relevant to memory management.
 
