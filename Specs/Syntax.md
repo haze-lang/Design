@@ -54,15 +54,21 @@ f : a b = b a
 id : Int -> Int
 id x = x
 
-add : Int x Int -> Int
+add : Int X Int -> Int
 ```
 
 ### Types
-```c
-Type ::= TYPE TYPENAME EQUALS TypeDef | RecordType
-Record ::= RECORD TYPENAME EQUALS (MEMBERNAME COLON TYPENAME)+
-Product ::= TYPE TYPENAME EQUALS
-TypeDef ::= // TOOD
+```haskell
+Type ::= SumType | RecordType
+RecordType ::= RECORD TYPENAME EQUALS (MEMBERNAME COLON TYPENAME)+
+SumType ::= TYPE TYPENAME EQUALS ProductType (BAR ProductType)*
+ProductType ::= TYPECONS (TYPENAME (CROSS TYPENAME)*)?
+```
+#### Sample Types
+```haskell
+type Unit = U
+type Bool = True | False
+type Pair = Pair Int X Int
 ```
 
 #### Sample Types
@@ -123,6 +129,7 @@ THEN ::= 'then'
 ELSE ::= 'else'
 SWITCH ::= 'switch'
 DEFAULT ::= 'default'
+BAR ::= '|'
 CROSS ::= 'X'
 UNIT ::= '()'
 EQUALS ::= '='
@@ -138,6 +145,7 @@ PROCNAME ::= IDENTIFIER
 FUNCNAME ::= IDENTIFIER
 PARAM ::= IDENTIFIER
 TYPENAME ::= IDENTIFIER
+TYPECONS ::= IDENTIFIER
 MEMBERNAME ::= IDENTIFIER
 IDENTIFIER ::= ALPHA (ALPHA | DIGIT)*
 ALPHA ::= 'a' ... 'z' | 'A' ... 'Z' | '_' | '''
