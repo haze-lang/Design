@@ -60,7 +60,7 @@ add : Int X Int -> Int
 ### Types
 ```haskell
 Type ::= SumType | RecordType
-RecordType ::= RECORD TYPENAME EQUALS (MEMBERNAME COLON TYPENAME)+
+RecordType ::= RECORD TYPENAME EQUALS TYPECONS (MEMBERNAME COLON TYPENAME)+
 SumType ::= TYPE TYPENAME EQUALS ProductType (BAR ProductType)*
 ProductType ::= TYPECONS (TYPENAME (CROSS TYPENAME)*)?
 ```
