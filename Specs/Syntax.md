@@ -4,7 +4,7 @@
 
 ### Programs
 ```
-Program ::= Procedure (Procedure | Function)*
+Program ::= (Type | Function)* Procedure (Procedure | Function | Type)*
 ```
 
 ### Procedures
@@ -60,9 +60,9 @@ add : Int X Int -> Int
 ### Types
 ```haskell
 Type ::= SumType | RecordType
-RecordType ::= RECORD TYPENAME EQUALS TYPECONS (MEMBERNAME COLON TYPENAME)+
+RecordType ::= RECORD TYPENAME EQUALS CONS (MEMBERNAME COLON TYPENAME)+
 SumType ::= TYPE TYPENAME EQUALS ProductType (BAR ProductType)*
-ProductType ::= TYPECONS (TYPENAME (CROSS TYPENAME)*)?
+ProductType ::= CONS (TYPENAME (CROSS TYPENAME)*)?
 ```
 #### Sample Types
 ```haskell
@@ -75,7 +75,7 @@ type Pair = Pair Int X Int
 ```
 type Point = Int X Int X Int
 
-record Point = 
+record Point = P
 X : Int
 Y : Int
 Z : Int
@@ -95,7 +95,7 @@ PureExpression ::= SwitchExpr
             | ConditionalExpression
             | LambdaExpr
             | IDENTIFIER
-            | LITERAL 
+            | LITERAL
 
 ConditionalExpression ::= IF PureExpression THEN PureExpression ELSE PureExpression
 
@@ -110,7 +110,7 @@ Pattern ::= LITERAL // TODO
 ##### Lambda
 ```
 \ => { Print "Hey" }
-x => { Print (add x 1) }
+x => add x 1
 ```
 ##### Switch
 
@@ -145,7 +145,7 @@ PROCNAME ::= IDENTIFIER
 FUNCNAME ::= IDENTIFIER
 PARAM ::= IDENTIFIER
 TYPENAME ::= IDENTIFIER
-TYPECONS ::= IDENTIFIER
+CONS ::= IDENTIFIER
 MEMBERNAME ::= IDENTIFIER
 IDENTIFIER ::= ALPHA (ALPHA | DIGIT)*
 ALPHA ::= 'a' ... 'z' | 'A' ... 'Z' | '_' | '''
