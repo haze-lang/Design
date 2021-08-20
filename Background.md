@@ -5,7 +5,7 @@ Described here is some context and reasons why I decided to work on a programmin
 The focus of this project is on features
 
 - proposed in research but are not part of the mainstream languages, or
-- used in niche *academic languages* (such as Lisp and family)
+- used in niche *academic languages* (such as Lisp/ML and family)
 
 The goal is to combine these features with the latest advancements in programming languages and make 
 them available in an imperative paradigm to enable everyday developers to understand them and use them 
@@ -15,7 +15,7 @@ without needing the theoretical background in Programming Language Theory.
 Collection of features and literature for the design. For details, see [Research](/Research/README.md).
 
 ### Pure Functional Programming
-Pure functional programming features from Lisp and family, notably Haskell.
+Pure functional programming features from Lisp/ML and family, notably Haskell.
 
 - Algebraic Effects
 - Pure & Higher-order functions
